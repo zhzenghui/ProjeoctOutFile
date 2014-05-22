@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>168941F2-14A3-4F1D-8F10-6F2CDB4FD159</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ProjeoctOutFile</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>81255F77-68CA-4ADE-8539-D31EA1FF04F5</key>
+		<string>svn://192.168.1.113</string>
+		<key>938526F9-DC69-41EC-8167-C40F06E76117</key>
+		<string>https://github.com/zhzenghui/ProjeoctOutFile.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>code/ProjeoctOutFile/ProjeoctOutFile.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>81255F77-68CA-4ADE-8539-D31EA1FF04F5</key>
+		<string>../../../..</string>
+		<key>938526F9-DC69-41EC-8167-C40F06E76117</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>81255F77-68CA-4ADE-8539-D31EA1FF04F5</key>
+		<string>svn://192.168.1.113</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/zhzenghui/ProjeoctOutFile.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>81255F77-68CA-4ADE-8539-D31EA1FF04F5</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>81255F77-68CA-4ADE-8539-D31EA1FF04F5</string>
+			<key>IDESourceControlWCCName</key>
+			<string>192.168.1.113</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>938526F9-DC69-41EC-8167-C40F06E76117</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ProjeoctOutFile</string>
+		</dict>
+	</array>
+</dict>
+</plist>
