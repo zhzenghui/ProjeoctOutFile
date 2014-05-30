@@ -193,7 +193,6 @@
     
     
     NSString *filePath = [NSString stringWithFormat:@"/%@/%@/100-iphone.plist", _projectTextField.stringValue, _versionTextField.stringValue];
-    
     if (isPublish) {
         filePath =  [NSString stringWithFormat:@"/%@/%@/100-iphone.plist", _projectTextField.stringValue, KCURRENT];
     }
@@ -378,14 +377,26 @@
     
 //    plist
     
-    NSString *plist = [NSString stringWithFormat:@"%@/%@/%@-Info.plist", _pathTextField.stringValue,
-                       _nameTextField.stringValue,_nameTextField.stringValue];
+    NSFileManager *fm = [[NSFileManager alloc] init];
+    NSString *currentPath = [fm currentDirectoryPath];
+    
+
+    
+    NSString *path =      [currentPath stringByAppendingString:@"/Info.plist"];
+    NSDictionary *plistDict = [[NSDictionary alloc] initWithContentsOfFile:path];
     
     
-    _plistPath.stringValue = plist;
     
     
-    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:plist];
+    
+    
+    
+    
+    _plistPath.stringValue =  plistDict[@"plist_path"];
+    _pathTextField.stringValue =  plistDict[@"path"];
+    
+    
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: plistDict[@"plist_path"]];
     
     
     _nameTextField.stringValue = dict[@"CFBundleDisplayName"];
@@ -396,8 +407,8 @@
     _projectTextField.stringValue = a.lastObject;
     
     
-    _ipaNameTextField.stringValue  = [NSString stringWithFormat:@"http://223.4.147.79:8080/ipa/dsg/%@/%@%@.ipa",
-                                      _projectTextField.stringValue, _projectTextField.stringValue,
+    _ipaNameTextField.stringValue  = [NSString stringWithFormat:@"%@%@%@.ipa",
+                                      plistDict[@"ipa_url_path"], _projectTextField.stringValue,
                                       _versionTextField.stringValue];
     _qrCode.image = [NSImage imageNamed:@"Front.500.jpg"];
 
@@ -502,8 +513,8 @@
     NSPasteboard* pb=[NSPasteboard generalPasteboard];
     [pb clearContents];
     
-
-    
+    NSData *data = [_qrCode.image TIFFRepresentation];
+    [pb setData:data forType:NSPasteboardTypePNG];
     
     NSTextAttachmentCell *attachmentCell = [[NSTextAttachmentCell alloc] initImageCell:_qrCode.image];
     NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
@@ -524,12 +535,12 @@
     
 //      print
     [[_textView textStorage] appendAttributedString:prettyName];
-    
-    
-//    copy
-    NSData *rtfData = [prettyName RTFFromRange:NSMakeRange(0, [prettyName length])
-                 documentAttributes:nil];
-    [pb setData:rtfData forType:NSRTFPboardType];
+//
+//    
+////    copy
+//    NSData *rtfData = [prettyName RTFFromRange:NSMakeRange(0, [prettyName length])
+//                 documentAttributes:nil];
+//    [pb setData:rtfData forType:NSRTFPboardType];
     
     //    [pb setData:rtf forType:NSPasteboardTypeRTF];
 //    if (rtf) {
